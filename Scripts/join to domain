@@ -1,0 +1,2 @@
+#Will prompt for the password for the administrator account on the PCs trying to join the domain. Will also prompt for domain admin credentials to allow them to join.
+Add-Computer -ComputerName 192.168.3.125, 192.168.3.127, 192.168.3.128, 192.168.3.129 -DomainName group4.local -LocalCredential "localhost/Administrator"
