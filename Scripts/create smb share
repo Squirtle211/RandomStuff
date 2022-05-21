@@ -1,0 +1,2 @@
+#Creates an smb share that give full access to domain admins
+New-SmbShare -Name "group4share" -Path "C:\shares\group4share" -FullAccess "group4.local\Domain Admins"
