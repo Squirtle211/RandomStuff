@@ -1,0 +1,1 @@
+Get-Content C:\temp\users.txt | ConvertFrom-String | ForEach-Object {New-ADUser -GivenName $_.P1 -Surname $_.P2 -Name ($_.P1 + " " + $_.P2) -UserPrincipalName (($_.P2 + "@" + "$env:userdnsdomain")).ToLower() -SamAccountName ($_.P2).ToLower() -AccountPassword (ConvertTo-SecureString -AsPlainText "Passw000rd123" -Force) -Enabled $true -ChangePasswordAtLogon $true -Verbose}
